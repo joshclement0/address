@@ -1,0 +1,21 @@
+FROM node:18-alpine as base
+RUN apk add --update --no-cache bash
+ENV PATH=$PATH:/app/node_modules/.bin
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+EXPOSE 8200
+EXPOSE 5173
+EXPOSE 3000
+
+
+FROM base AS development
+CMD npm rebuild esbuild && npm run start -- --host
+
+FROM base AS production
+ENV NODE_ENV=production NODE_PATH=build/ PORT=3000
+RUN npm run build
+
+CMD ["node", "build/index.js"]
