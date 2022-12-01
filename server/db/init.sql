@@ -13,20 +13,3 @@ Create Table Address (
     state character varying(20),
     country character varying(30)
 );
-
-INSERT INTO Address (
-    userid, 
-    name, 
-    address, 
-    zipcode, 
-    city, 
-    state, 
-    country) 
-VALUES( 
-    0, 
-    "Barney Fife",
-    "3500 Deer Creek Road",
-    "94304",
-    "Palo Alto",
-    "CA",
-    "United States");
