@@ -1,18 +1,18 @@
 type person={
-    name:string,
-    address:string,
-    city:string,
-    zipcode:string,
-    state:string,
-    country:string
+  name: string,
+  address: string,
+  city: string,
+  zipcode: string,
+  state: string,
+  country: string
 }
 type address={
-    streetName:string
-    state:string
-    country:string
+  streetName: string
+  state: string
+  country: string
 }
 
 export {
-    type address,
-    type person
+  type address,
+  type person
 }

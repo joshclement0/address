@@ -13,12 +13,12 @@ CORS(app)
 def hello():
     return [
         {
-            "name":"Gilbert Fife",
-            "address":"3500 Deer Creek Road",
-            "zipcode":"94304",
-            "city":"Palo Alto",
-            "state":"CA",
-            "country":"United States"
+            "name": "Gilbert Fife",
+            "address": "3500 Deer Creek Road",
+            "zipcode": "94304",
+            "city": "Palo Alto",
+            "state": "CA",
+            "country": "United States"
         }
     ]
 
@@ -33,7 +33,7 @@ def setAddress():
     data = request.json
     return connect.addAddress(id,data)
 
-@app.route('/register',methods=['POST'])
+@app.route('/register', methods=['POST'])
 def registeruser():
     username= request.json.get('user')
     password = request.json.get('password')

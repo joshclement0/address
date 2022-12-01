@@ -5,17 +5,16 @@ import userContext from './lib/context/authcontext';
 import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
-  const [userID,setUserID] = useState(0)
-  const [isLoggedIn,setLoggedIn] = useState(true)
+  const [userID, setUserID] = useState(0)
+  const [isLoggedIn, setLoggedIn] = useState(true)
 
-  const contextvalue = {userID,setUserID,isLoggedIn,setLoggedIn}
+  const contextvalue = {userID, setUserID, isLoggedIn, setLoggedIn}
   return (
     <div className="App">
       <userContext.Provider value={contextvalue}>
         <header className="App-header">
           <ChakraProvider>
-          
-          <AddressBook/>
+            <AddressBook/>
           </ChakraProvider>
         </header>
       </userContext.Provider>
