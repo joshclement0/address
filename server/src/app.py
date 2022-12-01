@@ -1,14 +1,13 @@
 
 from flask import Flask, request
 from flask_cors import CORS
-import logging
 
 import connect
 
 app = Flask(__name__)
 #this enables cors from every entrypoint
+#TODO: add options to specify only web app
 CORS(app)
-logging.getLogger('flask_cors').level = logging.DEBUG
 
 @app.route('/')
 def hello():
@@ -38,7 +37,7 @@ def setAddress():
 def registeruser():
     username= request.json.get('user')
     password = request.json.get('password')
-    connect.createUser(username,password)
+    return connect.createUser(username,password)
     
 
 @app.route('/login')

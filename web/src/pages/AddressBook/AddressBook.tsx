@@ -11,8 +11,7 @@ function AddressBook(){
     const { userID,isLoggedIn } = useContext(userContext)
     
     function addPersonToList(person:person){
-        let newlist = personList
-        newlist.push(person)
+        let newlist = [...personList,person]
         setpersonList(newlist)
     }
     useEffect(()=>{
